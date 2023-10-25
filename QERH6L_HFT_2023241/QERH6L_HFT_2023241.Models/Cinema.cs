@@ -15,7 +15,7 @@ namespace QERH6L_HFT_2023241.Models
         public string address { get; set; }
         public string city { get; set; }
 
-       
+        public List<Showtime> showtimes { get; set; }
 
     }
 }

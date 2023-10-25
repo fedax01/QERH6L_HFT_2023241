@@ -14,5 +14,7 @@ namespace QERH6L_HFT_2023241.Models
         public int length { get; set; }
         public string name { get; set; }  
         public string category { get; set; }   
+
+        public List<Showtime> showtimes { get; set; }
     }
 }

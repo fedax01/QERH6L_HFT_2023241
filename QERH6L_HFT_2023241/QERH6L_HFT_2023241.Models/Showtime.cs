@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace QERH6L_HFT_2023241.Models
 {
-    internal class Showtime
+    public class Showtime
     {
         [Key]
         public int id { get; set; }
