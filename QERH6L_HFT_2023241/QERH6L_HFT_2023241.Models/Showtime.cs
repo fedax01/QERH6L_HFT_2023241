@@ -14,5 +14,7 @@ namespace QERH6L_HFT_2023241.Models
         public DateTime date { get; set; }
         public Movie movie { get; set; }
         public Cinema cinema { get; set; } 
+        public int movieId { get; set; }
+        public int cinemaId { get;set; }
     }
 }
