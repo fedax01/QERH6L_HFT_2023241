@@ -12,7 +12,8 @@ namespace QERH6L_HFT_2023241.Repository
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseInMemoryDatabase(databaseName: "CinemaDb");
+            optionsBuilder.UseInMemoryDatabase(databaseName: "CinemaDb")
+                .UseLazyLoadingProxies();
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -41,6 +42,7 @@ namespace QERH6L_HFT_2023241.Repository
         }
         public DbSet<Cinema> Cinemas { get; set; }
         public DbSet<Movie> Movies { get; set; }
-       
+        public DbSet<Showtime> Showtimes { get; set; }
+
     }
 }
