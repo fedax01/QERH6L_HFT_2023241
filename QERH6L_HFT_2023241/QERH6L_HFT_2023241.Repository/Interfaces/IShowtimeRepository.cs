@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace QERH6L_HFT_2023241.Repository.Interfaces
 {
-    internal interface IShowtimeRepository : IRepository<Showtime>
+    public interface IShowtimeRepository : IRepository<Showtime>
     {
-        IQueryable<Showtime> GetAllByMovieName(string movieName);
+        
     }
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace QERH6L_HFT_2023241.Repository.Interfaces
 {
-    internal interface ICinemaRepository : IRepository<Cinema>
+    public interface ICinemaRepository : IRepository<Cinema>
     {
     }
 }

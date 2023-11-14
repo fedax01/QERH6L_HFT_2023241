@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace QERH6L_HFT_2023241.Repository.Repositories
 {
-    internal class CinemaRepository : ICinemaRepository
+    public class CinemaRepository : ICinemaRepository
     {
         private CinemaContext _cinemaCtx;
         public CinemaRepository(CinemaContext cinemaContext)

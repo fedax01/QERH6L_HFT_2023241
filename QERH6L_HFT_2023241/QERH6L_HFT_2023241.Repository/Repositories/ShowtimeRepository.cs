@@ -30,11 +30,7 @@ namespace QERH6L_HFT_2023241.Repository.Repositories
             _cinemaCtx.SaveChanges();
         }
 
-        public IQueryable<Showtime> GetAllByMovieName(string movieName)
-        {
-            throw new NotImplementedException();
-        }
-
+       
         public Showtime Read(int id)
         {
             Showtime showtime = _cinemaCtx.Showtimes.Where(s => s.id == id).FirstOrDefault();
