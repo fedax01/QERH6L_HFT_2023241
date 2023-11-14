@@ -30,7 +30,7 @@ namespace QERH6L_HFT_2023241.Repository
             modelBuilder.Entity<Cinema>().HasData(
                new Cinema() { id = 1, name = "Malom Mozi", address = "Deák Ferenc utca", city = "Kecskemét" },
                new Cinema() { id = 2, name = "Sugár Mozi", address = "Pillangó utca", city = "Budapest" },
-               new Cinema() { id = 3, name = "Cinema City", address = "Malom utca", city = "Kiskunhalas" });
+               new Cinema() { id = 3, name = "Cinema City", address = "Malom utca", city = "Budapest" });
 
             modelBuilder.Entity<Movie>().HasData(
               new Movie() { id = 1, length = 120, name = "Star Wars", category = "scifi" },
