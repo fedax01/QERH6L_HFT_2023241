@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace QERH6L_HFT_2023241.Repository.Repositories
 {
-    internal class MovieRepository : IMovieRepository
+    public class MovieRepository : IMovieRepository
     {
         private CinemaContext _cinemaCtx;
         public MovieRepository(CinemaContext cinemaContext)
