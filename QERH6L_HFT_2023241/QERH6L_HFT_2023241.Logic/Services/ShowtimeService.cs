@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace QERH6L_HFT_2023241.Logic.Services
 {
-    internal class ShowtimeService
+    public class ShowtimeService
     {
         IShowtimeRepository showtimeRepository;
         public ShowtimeService(IShowtimeRepository showtimeRepository)
