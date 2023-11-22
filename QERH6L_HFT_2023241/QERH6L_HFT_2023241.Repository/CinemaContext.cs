@@ -37,8 +37,9 @@ namespace QERH6L_HFT_2023241.Repository
               new Movie() { id = 2, length = 150, name = "Vakáció", category = "vígjáték" });
 
             modelBuilder.Entity<Showtime>().HasData(
-                new Showtime() { id = 1, date = new DateTime(), movieId = 1, cinemaId = 2 },
-                new Showtime() { id = 2, date = new DateTime(2012,8,17), movieId = 2, cinemaId = 3 });
+                new Showtime() { id = 1, date = new DateTime(2018,1,26), movieId = 1, cinemaId = 2 },
+                new Showtime() { id = 2, date = new DateTime(2012,8,17), movieId = 2, cinemaId = 3 },
+                new Showtime() { id = 3, date = new DateTime(2016, 3, 9), movieId = 1, cinemaId = 3 });
         }
         public DbSet<Cinema> Cinemas { get; set; }
         public DbSet<Movie> Movies { get; set; }
