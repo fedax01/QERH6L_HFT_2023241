@@ -26,6 +26,7 @@ namespace QERH6L_HFT_2023241.Test
             movies.Add(new Movie() { id = 2, length = 150, name = "Vakáció", category = "vígjáték" });
             var mock = new Mock<IMovieRepository>();
             mock.Setup(m => m.ReadAll()).Returns(movies.AsQueryable());
+            service = new MovieService(mock.Object);
             IEnumerable<Movie> moviesResult = service.GetMoviesByLength(100);
             Assert.AreEqual(2,moviesResult.Count());
            
@@ -34,23 +35,32 @@ namespace QERH6L_HFT_2023241.Test
         public void TestCreateMovie()
         {
             Movie movie = new Movie() {id = 6, name = "Egy ropi naplója", category = "Gyerek/Vígjáték",length = 94};
+            var mock = new Mock<IMovieRepository>();
+            Movie movieRepoParameter = null;
+            mock.Setup(m => m.Create(It.IsAny<Movie>()))
+                .Callback<Movie>(m => movieRepoParameter = m);
+            service = new MovieService(mock.Object);
             service.Create(movie);
-           Movie movie2 = service.Read(6);
+           
 
-            Assert.AreEqual(6, movie2.id);
-            Assert.AreEqual("Egy ropi naplója", movie2.name);
-            Assert.AreEqual("Gyerek/Vígjáték", movie2.category);
-            Assert.AreEqual(94, movie2.length);
+            Assert.AreEqual(movie.id, movieRepoParameter.id);
+            Assert.AreEqual(movie.name, movieRepoParameter.name);
+            Assert.AreEqual(movie.category, movieRepoParameter.category);
+            Assert.AreEqual(movie.length, movieRepoParameter.length);
         }
         [Test]
         public void TestReadMovie()
         {
-            Movie movie = service.Read(1);
-
-            Assert.AreEqual(1, movie.id);
-            Assert.AreEqual(120, movie.length);
-            Assert.AreEqual("Star Wars", movie.name);
-            Assert.AreEqual("scifi", movie.category);
+            Movie movie = new Movie() { id = 1, length = 120, name = "Star Wars", category = "scifi" };
+            var mock = new Mock<IMovieRepository>();
+            mock.Setup(m => m.Read(It.IsAny<int>())).Returns(movie);
+            service = new MovieService(mock.Object);
+            Movie movieResult = service.Read(1);
+            
+            Assert.AreEqual(1, movieResult.id);
+            Assert.AreEqual(120, movieResult.length);
+            Assert.AreEqual("Star Wars", movieResult.name);
+            Assert.AreEqual("scifi", movieResult.category);
         }
     }
 }
