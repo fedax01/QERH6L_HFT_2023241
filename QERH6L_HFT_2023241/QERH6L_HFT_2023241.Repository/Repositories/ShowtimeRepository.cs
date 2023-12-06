@@ -44,6 +44,10 @@ namespace QERH6L_HFT_2023241.Repository.Repositories
 
         public void Update(Showtime item)
         {
+            Showtime dbitem = _cinemaCtx.Showtimes.Where(c => c.id == item.id).FirstOrDefault();
+            dbitem.date = item.date;
+            dbitem.movieId = item.movieId;
+            dbitem.cinemaId = item.cinemaId;
             _cinemaCtx.SaveChanges();
         }
 

@@ -42,6 +42,11 @@ namespace QERH6L_HFT_2023241.Repository.Repositories
 
         public void Update(Cinema item)
         {
+            Cinema dbitem = _cinemaCtx.Cinemas.Where(c => c.id == item.id).FirstOrDefault();
+            dbitem.name = item.name;
+            dbitem.address = item.address;
+            dbitem.city = item.city;
+
             _cinemaCtx.SaveChanges();
         }
     }
