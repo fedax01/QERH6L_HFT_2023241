@@ -10,10 +10,15 @@ namespace QERH6L_HFT_2023241.Repository
 {
     public class CinemaContext : DbContext
     {
+        public CinemaContext()
+        {
+            Database.EnsureCreated();
+        }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseInMemoryDatabase(databaseName: "CinemaDb")
                 .UseLazyLoadingProxies();
+           
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

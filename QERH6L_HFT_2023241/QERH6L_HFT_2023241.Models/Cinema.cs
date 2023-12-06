@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace QERH6L_HFT_2023241.Models
@@ -14,7 +15,7 @@ namespace QERH6L_HFT_2023241.Models
         public  string name { get; set; }
         public string address { get; set; }
         public string city { get; set; }
-
+        [JsonIgnore]
         public virtual List<Showtime> showtimes { get; set; }
 
     }
