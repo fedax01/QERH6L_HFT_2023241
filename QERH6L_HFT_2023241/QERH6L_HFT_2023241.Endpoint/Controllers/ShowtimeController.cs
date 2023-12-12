@@ -18,6 +18,7 @@ namespace QERH6L_HFT_2023241.Endpoint.Controllers
             this._showtimeService = service;
         }
         [Route("/showtime/all")]
+        [HttpGet]
         public List<Showtime> GetAll()
         {
             return _showtimeService.ReadAll().ToList();
@@ -44,18 +45,21 @@ namespace QERH6L_HFT_2023241.Endpoint.Controllers
             return true;
         }
         [Route("/showtime/movieName/{movieName}")]
+        [HttpGet]
         public IEnumerable<Showtime> GetShowtimesByMovie(string movieName)
         {
             return _showtimeService.GetShowtimesByMovie(movieName);
 
         }
         [Route("/showtime/cinemaName/{cinemaName}")]
+        [HttpGet]
         public IEnumerable<Showtime> GetShowtimesByCinema(string cinemaName)
         {
             return _showtimeService.GetShowtimesByCinema(cinemaName);
 
         }
         [Route("/showtime/date/{date}")]
+        [HttpGet]
         public IEnumerable<Showtime> GetShowtimesByDateAfter(DateTime date)
         {
             return _showtimeService.GetShowtimesByDateAfter(date);

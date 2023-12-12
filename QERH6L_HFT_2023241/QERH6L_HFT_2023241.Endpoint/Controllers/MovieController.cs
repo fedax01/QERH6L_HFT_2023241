@@ -17,6 +17,7 @@ namespace QERH6L_HFT_2023241.Endpoint.Controllers
             this._movieService = service;
         }
         [Route("/movie/all")]
+        [HttpGet]
         public List<Movie> GetAll()
         {
             return _movieService.ReadAll().ToList();
@@ -43,6 +44,7 @@ namespace QERH6L_HFT_2023241.Endpoint.Controllers
             return true;
         }
         [Route("/movie/length/{length}")]
+        [HttpGet]
         public IEnumerable<Movie> GetMoviesByLength(int length)
         {
             return _movieService.GetMoviesByLength(length);

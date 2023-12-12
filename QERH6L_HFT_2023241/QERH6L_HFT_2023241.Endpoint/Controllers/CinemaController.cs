@@ -18,6 +18,7 @@ namespace QERH6L_HFT_2023241.Endpoint.Controllers
             this._cinemaService = service;
         }
         [Route("/cinemas/all")]
+        [HttpGet]
         public List<Cinema> GetAll()
         {
             return _cinemaService.ReadAll().ToList();
@@ -44,6 +45,7 @@ namespace QERH6L_HFT_2023241.Endpoint.Controllers
             return true;
         }
         [Route("/cinemas/city/{city}")]
+        [HttpGet]
         public IEnumerable<Cinema> GetCinemasByCity(string city)
         {
             return _cinemaService.GetCinemasByCity(city);
